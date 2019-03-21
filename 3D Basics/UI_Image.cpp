@@ -15,8 +15,8 @@ UI_Image::UI_Image(Camera * camera, std::string imagePath, glm::vec2 sizeInPixel
 	backgroundImage->GetTexture()->Initialise();
 	this->camera = camera;
 
-	transform.scale.x = -sizeInPixels.x;
-	transform.scale.z = sizeInPixels.y;
+	transform.scale.x = -sizeInPixels.x / 120.0f;
+	transform.scale.z = sizeInPixels.y / 120.0f; 
 
 	// Create Background Program
 	imageProgram = ShaderLoader::GetInstance()->CreateProgram("VertexShader.vs", "FragmentShader.fs");

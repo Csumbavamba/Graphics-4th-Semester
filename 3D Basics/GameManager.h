@@ -13,8 +13,6 @@ class ShaderLoader;
 
 class Scene;
 class StartMenuScene;
-class CreditsScene;
-class ControlsScene;
 class GameScene;
 
 class GameManager
@@ -50,8 +48,6 @@ private:
 	float previousTimeStamp;
 
 	StartMenuScene * startMenuScene = NULL;
-	CreditsScene * creditsScene = NULL;
-	ControlsScene * controlsScene = NULL;
 	GameScene * gameScene = NULL;
 	
 

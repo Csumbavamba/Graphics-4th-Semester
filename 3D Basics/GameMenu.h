@@ -28,12 +28,10 @@ public:
 
 private:
 
-	UI_Button * buttons[4];
+	UI_Button * buttons[2];
 	int buttonSelected;
 	
 	UI_Button * startButton = NULL;
-	UI_Button * controlsButton = NULL;
-	UI_Button * creditsButton = NULL;
 	UI_Button * quitButton = NULL;
 
 	AudioSound * clickSound = NULL;

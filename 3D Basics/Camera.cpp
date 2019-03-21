@@ -128,7 +128,7 @@ void Camera::RotateAroundObject(glm::vec3 objectLocation, float distanceFromObje
 
 	cameraUpDirection = glm::vec3(0.0, 0.0, 1.0);
 	cameraPosition = glm::vec3(objectLocation.x + xMovement, cameraY, objectLocation.z + zMovement);
-	cameraLookDirection = objectLocation;
+	cameraLookDirection = objectLocation - cameraPosition;
 }
 
 void Camera::FollowObject(glm::vec3 objectLocation)

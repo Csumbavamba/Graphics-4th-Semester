@@ -9,9 +9,7 @@
 // Scenes
 #include "Scene.h"
 #include "SceneManager.h"
-#include "ControlsScene.h"
 #include "StartMenuScene.h"
-#include "CreditsScene.h"
 #include "GameScene.h"
 
 #pragma comment(lib, "Ws2_32.lib")
@@ -25,14 +23,10 @@ GameManager::GameManager()
 	// Create Scenes
 	startMenuScene = new StartMenuScene();
 	startMenuScene->SetIsActiveScene(true);
-	creditsScene = new CreditsScene();
-	controlsScene = new ControlsScene();
 	gameScene = new GameScene();
 	
 	// Push Scenes into the scene Holder
 	scenes.push_back(startMenuScene);
-	scenes.push_back(creditsScene);
-	scenes.push_back(controlsScene);
 	scenes.push_back(gameScene);
 
 	SceneManager::AddScenes(scenes);

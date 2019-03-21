@@ -5,9 +5,11 @@
 #include "Dependencies\freeglut\freeglut.h"
 
 #include <string>
+#include "AudioSystem.h"
+#include "Camera.h"
 
-class AudioSystem;
-class Camera;
+//class AudioSystem;
+//class Camera;
 
 
 class Scene

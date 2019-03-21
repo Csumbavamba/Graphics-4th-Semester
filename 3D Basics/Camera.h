@@ -36,7 +36,7 @@ public:
 	void FollowObject(glm::vec3 objectLocation);
 
 
-private:
+protected:
 	glm::vec3 cameraPosition;
 	glm::vec3 cameraLookDirection;
 	glm::vec3 cameraUpDirection;

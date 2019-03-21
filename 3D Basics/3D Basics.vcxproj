@@ -144,13 +144,13 @@
     <ClCompile Include="AudioQueue.cpp" />
     <ClCompile Include="AudioSound.cpp" />
     <ClCompile Include="AudioSystem.cpp" />
-    <ClCompile Include="ControlsScene.cpp" />
-    <ClCompile Include="CreditsScene.cpp" />
     <ClCompile Include="FileWriting.cpp" />
     <ClCompile Include="GameMenu.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MovingCamera.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="ShaderedCube.cpp" />
     <ClCompile Include="StartMenuScene.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="UI_Image.cpp" />
@@ -165,7 +165,6 @@
     <ClCompile Include="Mesh_Model.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Skybox.cpp" />
-    <ClCompile Include="TestObject.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Mesh2D_Quad.cpp" />
@@ -182,12 +181,12 @@
     <ClInclude Include="AudioQueue.h" />
     <ClInclude Include="AudioSound.h" />
     <ClInclude Include="AudioSystem.h" />
-    <ClInclude Include="ControlsScene.h" />
-    <ClInclude Include="CreditsScene.h" />
     <ClInclude Include="FileWriting.h" />
     <ClInclude Include="GameMenu.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="MovingCamera.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="ShaderedCube.h" />
     <ClInclude Include="StartMenuScene.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="UI_Image.h" />
@@ -202,7 +201,6 @@
     <ClInclude Include="Skybox.h" />
     <ClInclude Include="Mesh_Model.h" />
     <ClInclude Include="Model.h" />
-    <ClInclude Include="TestObject.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Mesh2D_Quad.h" />

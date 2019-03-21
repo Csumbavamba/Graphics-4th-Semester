@@ -43,9 +43,6 @@
     <ClCompile Include="Mesh_Sphere.cpp">
       <Filter>Source\Engine\Meshes</Filter>
     </ClCompile>
-    <ClCompile Include="TestObject.cpp">
-      <Filter>Source\Engine</Filter>
-    </ClCompile>
     <ClCompile Include="CubeMap.cpp">
       <Filter>Source\Engine</Filter>
     </ClCompile>
@@ -101,16 +98,16 @@
     <ClCompile Include="StartMenuScene.cpp">
       <Filter>Source\3D Game\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="CreditsScene.cpp">
-      <Filter>Source\3D Game\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>Source\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="ControlsScene.cpp">
+    <ClCompile Include="GameScene.cpp">
       <Filter>Source\3D Game\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="ShaderedCube.cpp">
+      <Filter>Source\3D Game</Filter>
+    </ClCompile>
+    <ClCompile Include="MovingCamera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -157,9 +154,6 @@
     </ClInclude>
     <ClInclude Include="Mesh_Sphere.h">
       <Filter>Header Files\Engine\Meshes</Filter>
-    </ClInclude>
-    <ClInclude Include="TestObject.h">
-      <Filter>Header Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="CubeMap.h">
       <Filter>Header Files\Engine</Filter>
@@ -213,16 +207,16 @@
     <ClInclude Include="StartMenuScene.h">
       <Filter>Header Files\3D Game\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="CreditsScene.h">
-      <Filter>Header Files\3D Game\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="ControlsScene.h">
+    <ClInclude Include="GameScene.h">
       <Filter>Header Files\3D Game\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="GameScene.h" />
+    <ClInclude Include="ShaderedCube.h">
+      <Filter>Header Files\3D Game</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">

@@ -1,12 +1,11 @@
 #include "Scene.h"
 
-#include "AudioSystem.h"
-#include "Camera.h"
+
 
 
 Scene::Scene()
 {
-	this->mainCamera = new Camera(ORTOGRAPHIC);
+	this->mainCamera = new Camera(PERSPECTIVE);
 	this->audioSystem = new AudioSystem();
 
 	mainCamera->Initialise();

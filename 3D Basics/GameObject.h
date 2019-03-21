@@ -9,7 +9,6 @@
 #include "Transform.h"
 
 class Camera;
-class Collider_Sphere;
 
 class GameObject
 {
