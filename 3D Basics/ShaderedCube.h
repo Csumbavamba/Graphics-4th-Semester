@@ -14,6 +14,7 @@ public:
 	virtual void Render(GLuint program);
 	virtual void Update(float deltaTime);
 
+
 private:
 
 	Mesh_Cube * mesh = NULL;

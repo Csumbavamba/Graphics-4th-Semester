@@ -80,11 +80,14 @@ void GameManager::PlayGame(int argc, char ** argv)
 
 	//// Enable Depth for Rendering -- See if that causes error
 	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_DEPTH_CLAMP); // TODO - see what does this do
 	glDepthFunc(GL_LESS);
 
 	// Blend between textures
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	
+	
 
 	GetInstance()->Initialise();
 
@@ -99,6 +102,7 @@ void GameManager::PlayGame(int argc, char ** argv)
 	glutMouseFunc(Input::MouseClick);
 	glutMotionFunc(Input::MouseActiveMove);
 	glutPassiveMotionFunc(Input::MousePassiveMove);
+	
 
 	glutCloseFunc(GameManager::ShutDownGame);
 	glutMainLoop();
@@ -124,7 +128,7 @@ void GameManager::Initialise()
 
 void GameManager::Render()
 {
-	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 	glClearColor(1.0, 0.0, 0.0, 1.0); // clear red
 
 	

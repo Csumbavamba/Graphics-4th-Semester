@@ -2,7 +2,6 @@
 #include "GameObject.h"
 
 class UI_Button;
-class UI_Image;
 class Camera;
 class AudioSystem;
 class AudioSound;
@@ -36,7 +35,6 @@ private:
 
 	AudioSound * clickSound = NULL;
 	AudioSound * swapSound = NULL;
-	UI_Image * backgroundImage = NULL;
 
 };
 

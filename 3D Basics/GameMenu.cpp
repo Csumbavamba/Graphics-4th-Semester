@@ -31,7 +31,6 @@ GameMenu::GameMenu(Camera * mainCamera, AudioSystem * audioSystem)
 	buttons[buttonSelected]->SetIsSelected(true);
 	
 
-	backgroundImage = new UI_Image(mainCamera, "Sprites/background.jpg", Utility::GetScreenSize());
 	clickSound = new AudioSound("Audio/Click.wav", FMOD_DEFAULT);
 	swapSound = new AudioSound("Audio/Click2.wav", FMOD_DEFAULT);
 
@@ -41,8 +40,6 @@ GameMenu::GameMenu(Camera * mainCamera, AudioSystem * audioSystem)
 
 GameMenu::~GameMenu()
 {
-	delete backgroundImage;
-	backgroundImage = NULL;
 
 	for (int i = 0; i < 2; i++)
 	{
@@ -56,7 +53,6 @@ GameMenu::~GameMenu()
 
 void GameMenu::Initialise()
 {
-	backgroundImage->Initialise();
 
 	startButton->Initialise();
 	quitButton->Initialise();
@@ -66,7 +62,6 @@ void GameMenu::Render(GLuint program)
 {
 	if (isActive)
 	{
-		backgroundImage->Render(NULL);
 
 		startButton->Render(NULL);
 		quitButton->Render(NULL);
@@ -77,7 +72,6 @@ void GameMenu::Update(float deltaTime)
 {
 	if (isActive)
 	{
-		backgroundImage->Update(deltaTime);
 
 		startButton->Update(deltaTime);
 		quitButton->Update(deltaTime);

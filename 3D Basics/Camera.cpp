@@ -16,9 +16,9 @@ Camera::Camera(ViewMode viewMode)
 {
 	this->viewMode = viewMode;
 
-	cameraPosition = glm::vec3(0.0f, 10.0f, 0.0f);
-	cameraLookDirection = glm::vec3(0.0f, -1.0f, 0.0f);
-	cameraUpDirection = glm::vec3(0.0f, 0.0f, 1.0f);
+	cameraPosition = glm::vec3(1.0f, 1.0f, 10.0f);
+	cameraLookDirection = glm::vec3(0.0f, 0.0f, -1.0f);
+	cameraUpDirection = glm::vec3(0.0f, 1.0f, 0.0f);
 
 }
 
