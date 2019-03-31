@@ -20,6 +20,10 @@ public:
 	virtual void Update(float deltaTime) override;
 
 	void ProcessScissorInput();
+	void ProcessStencilInput();
+	void LookForPauseInput();
+
+	void ResetScene();
 
 
 private:
@@ -30,7 +34,5 @@ private:
 	Skybox * skybox = NULL;
 
 	bool isScissorEnabled;
-	bool isStencilEnabled;
-	int stencilPass;
 };
 

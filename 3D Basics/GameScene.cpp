@@ -5,6 +5,7 @@
 #include "Input.h"
 #include "Skybox.h"
 #include "ShaderLoader.h"
+#include "SceneManager.h"
 
 
 GameScene::GameScene()
@@ -17,9 +18,6 @@ GameScene::GameScene()
 	skybox = new Skybox(mainCamera);
 
 	isScissorEnabled = false;
-	isStencilEnabled = true;
-
-	stencilPass = 1;
 }
 
 
@@ -40,28 +38,9 @@ void GameScene::Initialise()
 
 void GameScene::Render(GLuint program)
 {
-	skybox->Render(skyBoxProgram);
+	// skybox->Render(skyBoxProgram);
 
-	if (isStencilEnabled)
-	{
-		glEnable(GL_STENCIL_TEST);
-		glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
-
-		// First pass
-		glStencilFunc(GL_ALWAYS, 1, 0xFF);
-		glStencilMask(0xFF);
-
-		cube->Render(program);
-
-		// Second pass
-		glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
-		glStencilMask(0x00);
-
-		cube->Render(program);
-
-		glDisable(GL_STENCIL_TEST);
-	}
-
+	cube->Render(program);
 	
 }
 
@@ -69,18 +48,20 @@ void GameScene::Update(float deltaTime)
 {
 	Scene::Update(deltaTime);
 
-	skybox->Update();
+	// skybox->Update();
 
 	cube->Update(deltaTime);
 
-	// mainCamera->RotateAroundObject(cube->transform.position, 10.0f, deltaTime);
+	mainCamera->RotateAroundObject(cube->transform.position, 3.0f, deltaTime);
 
 	ProcessScissorInput();
+	ProcessStencilInput();
+	LookForPauseInput();
 }
 
 void GameScene::ProcessScissorInput()
 {
-	if (Input::GetKeyState('w') == DOWN_FIRST)
+	if (Input::GetKeyState('q') == DOWN_FIRST)
 	{
 		// If Key is pressed enable or disable Scissor Test
 		if (isScissorEnabled)
@@ -95,5 +76,35 @@ void GameScene::ProcessScissorInput()
 			isScissorEnabled = true;
 		}
 	}
+}
+
+void GameScene::ProcessStencilInput()
+{
+	if (Input::GetKeyState('w') == DOWN_FIRST)
+	{
+		// Swap between outlined and not outlined
+		cube->SetIsOutlined(!cube->IsOutlined());
+	}
+}
+
+void GameScene::LookForPauseInput()
+{
+	// If Escape is clicked
+	if (Input::GetKeyState(27) == DOWN_FIRST)
+	{
+		ResetScene();
+		SceneManager::ChangeActiveScene("StartMenuScene");
+	}
+}
+
+void GameScene::ResetScene()
+{
+	// Reset Scissors
+	glDisable(GL_SCISSOR_TEST);
+	isScissorEnabled = false;
+
+	// Reset Outline
+	cube->SetIsOutlined(false);
+
 }
 

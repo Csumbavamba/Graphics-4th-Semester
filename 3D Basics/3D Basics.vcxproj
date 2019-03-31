@@ -218,6 +218,7 @@
     <None Include="FragmentShader.fs" />
     <None Include="Model.fs" />
     <None Include="Model.vs" />
+    <None Include="OutlineShader.fs" />
     <None Include="Phong-FragmentShader.fs" />
     <None Include="Phong-VertexShader.vs" />
     <None Include="Reflection-FS.fs" />

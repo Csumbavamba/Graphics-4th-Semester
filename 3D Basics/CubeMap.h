@@ -7,13 +7,11 @@
 #include "string.h"
 #include "Mesh_Cube.h"
 
-//class Mesh_Cube;
 
 class CubeMap : public Mesh_Cube
 {
 public:
 	CubeMap(GameObject * owner, std::vector <std::string> vectorOfFilePaths);
-	//~CubeMap();
 
 	virtual void Initialise() override;
 	virtual void Render(Camera * camera, GLuint program) override;

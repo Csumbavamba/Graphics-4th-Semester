@@ -261,6 +261,9 @@
     <None Include="Model.vs">
       <Filter>Resources\Shaders</Filter>
     </None>
+    <None Include="OutlineShader.fs">
+      <Filter>Resources\Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">
