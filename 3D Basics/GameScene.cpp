@@ -6,6 +6,7 @@
 #include "Skybox.h"
 #include "ShaderLoader.h"
 #include "SceneManager.h"
+#include "WaterObject.h"
 
 
 GameScene::GameScene()
@@ -17,6 +18,11 @@ GameScene::GameScene()
 
 	cube = new ShaderedCube(mainCamera);
 	skybox = new Skybox(mainCamera);
+
+	// Water effects
+	waterTop = new WaterObject(mainCamera);
+	waterTop->transform.rotation.x = +90.f;
+	waterTop->transform.position.z += 5.0f;
 
 	isScissorEnabled = false;
 }
@@ -30,12 +36,15 @@ GameScene::~GameScene()
 	delete skybox;
 	skybox = NULL;
 
+	delete waterTop;
+	waterTop = NULL;
 }
 
 void GameScene::Initialise()
 {
 	cube->Initialise();
 	skybox->Initialise();
+	waterTop->Initialise();
 }
 
 void GameScene::Render(GLuint program)
@@ -43,6 +52,8 @@ void GameScene::Render(GLuint program)
 	// skybox->Render(skyBoxProgram);
 
 	cube->Render(fogProgram);
+
+	waterTop->Render(program);
 	
 }
 
@@ -53,6 +64,7 @@ void GameScene::Update(float deltaTime)
 	// skybox->Update();
 
 	cube->Update(deltaTime);
+	waterTop->Update(deltaTime);
 
 	// mainCamera->RotateAroundObject(cube->transform.position, 3.0f, deltaTime);
 

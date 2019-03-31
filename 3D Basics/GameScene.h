@@ -1,12 +1,10 @@
 #pragma once
 #include "Scene.h"
 
-//#include "Dependencies\soil\SOIL.h"
-//#include "Dependencies\glew\glew.h"
-//#include "Dependencies\freeglut\freeglut.h"
 
 class ShaderedCube;
 class Skybox;
+class WaterObject;
 
 class GameScene :
 	public Scene
@@ -30,6 +28,10 @@ private:
 	// Gonna need to have a camera
 	ShaderedCube * cube = NULL;
 	Skybox * skybox = NULL;
+
+	// Water Shading
+	WaterObject * waterTop = NULL;
+	
 
 	GLuint skyBoxProgram;
 	GLuint fogProgram;

@@ -137,7 +137,7 @@ void GameManager::Initialise()
 void GameManager::Render()
 {
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-	glClearColor(1.0, 0.0, 0.0, 1.0); // clear red
+	glClearColor(.5, 0.5, 0.5, 1.0); // clear red
 
 	
 	// Do rendering here - Render Current Scene
