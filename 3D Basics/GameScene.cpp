@@ -61,7 +61,6 @@ void GameScene::Initialise()
 	cubeTwo->Initialise();
 	skybox->Initialise();
 	pool->Initialise();
-	// movingCamera->Initialise();
 }
 
 void GameScene::Render(GLuint program)
@@ -79,12 +78,13 @@ void GameScene::Update(float deltaTime)
 {
 	Scene::Update(deltaTime);
 
+	// Update GameObjects
 	movingCamera->Update(deltaTime);
-
 	cube->Update(deltaTime);
 	cubeTwo->Update(deltaTime);
 	pool->Update(deltaTime);
 
+	// Process Inputs
 	ProcessScissorInput();
 	ProcessStencilInput();
 	LookForPauseInput();

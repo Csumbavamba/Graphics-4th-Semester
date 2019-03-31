@@ -84,39 +84,41 @@
     </ClCompile>
     <ClCompile Include="FileWriting.cpp" />
     <ClCompile Include="main.cpp">
-      <Filter>Source\3D Game</Filter>
+      <Filter>Source\Graphics-Assignment</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>Source\Engine</Filter>
     </ClCompile>
     <ClCompile Include="GameMenu.cpp">
-      <Filter>Source\3D Game</Filter>
+      <Filter>Source\Graphics-Assignment</Filter>
     </ClCompile>
     <ClCompile Include="GameManager.cpp">
-      <Filter>Source\3D Game</Filter>
+      <Filter>Source\Graphics-Assignment</Filter>
     </ClCompile>
     <ClCompile Include="StartMenuScene.cpp">
-      <Filter>Source\3D Game\Scenes</Filter>
+      <Filter>Source\Graphics-Assignment\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>Source\Engine</Filter>
     </ClCompile>
     <ClCompile Include="GameScene.cpp">
-      <Filter>Source\3D Game\Scenes</Filter>
+      <Filter>Source\Graphics-Assignment\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="ShaderedCube.cpp">
-      <Filter>Source\3D Game</Filter>
+      <Filter>Source\Graphics-Assignment</Filter>
     </ClCompile>
     <ClCompile Include="WaterPool.cpp">
-      <Filter>Source\3D Game</Filter>
+      <Filter>Source\Graphics-Assignment</Filter>
     </ClCompile>
     <ClCompile Include="WaterObject.cpp">
-      <Filter>Source\3D Game</Filter>
+      <Filter>Source\Graphics-Assignment</Filter>
     </ClCompile>
     <ClCompile Include="PoolWall.cpp">
-      <Filter>Source\3D Game</Filter>
+      <Filter>Source\Graphics-Assignment</Filter>
     </ClCompile>
-    <ClCompile Include="MovingCamera.cpp" />
+    <ClCompile Include="MovingCamera.cpp">
+      <Filter>Source\Graphics-Assignment</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -208,33 +210,35 @@
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="GameMenu.h">
-      <Filter>Header Files\3D Game</Filter>
+      <Filter>Header Files\Graphics-Assignment</Filter>
     </ClInclude>
     <ClInclude Include="GameManager.h">
-      <Filter>Header Files\3D Game</Filter>
+      <Filter>Header Files\Graphics-Assignment</Filter>
     </ClInclude>
     <ClInclude Include="StartMenuScene.h">
-      <Filter>Header Files\3D Game\Scene</Filter>
+      <Filter>Header Files\Graphics-Assignment\Scene</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="GameScene.h">
-      <Filter>Header Files\3D Game\Scene</Filter>
+      <Filter>Header Files\Graphics-Assignment\Scene</Filter>
     </ClInclude>
     <ClInclude Include="ShaderedCube.h">
-      <Filter>Header Files\3D Game</Filter>
+      <Filter>Header Files\Graphics-Assignment</Filter>
     </ClInclude>
     <ClInclude Include="PoolWall.h">
-      <Filter>Header Files\3D Game</Filter>
+      <Filter>Header Files\Graphics-Assignment</Filter>
     </ClInclude>
     <ClInclude Include="WaterObject.h">
-      <Filter>Header Files\3D Game</Filter>
+      <Filter>Header Files\Graphics-Assignment</Filter>
     </ClInclude>
     <ClInclude Include="WaterPool.h">
-      <Filter>Header Files\3D Game</Filter>
+      <Filter>Header Files\Graphics-Assignment</Filter>
     </ClInclude>
-    <ClInclude Include="MovingCamera.h" />
+    <ClInclude Include="MovingCamera.h">
+      <Filter>Header Files\Graphics-Assignment</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">
@@ -323,12 +327,6 @@
     <Filter Include="Source\Engine\Sound">
       <UniqueIdentifier>{ccb6f7c7-58e3-4b05-a9b5-7277158a1774}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\3D Game">
-      <UniqueIdentifier>{6caa5520-f781-4f14-b2cb-b6ca80cd34cc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\3D Game">
-      <UniqueIdentifier>{7bac1137-f9ac-45fc-a72c-f894c5d850b8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\Engine\Meshes">
       <UniqueIdentifier>{cabb65a7-41f4-4ff3-85ce-63ceba7da543}</UniqueIdentifier>
     </Filter>
@@ -341,11 +339,17 @@
     <Filter Include="Header Files\Engine\UI">
       <UniqueIdentifier>{c5d2962d-0bda-481c-bbf7-de8a75150da6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\3D Game\Scenes">
-      <UniqueIdentifier>{330c8296-9cf4-44ef-b91f-49b9cf45b688}</UniqueIdentifier>
+    <Filter Include="Header Files\Graphics-Assignment">
+      <UniqueIdentifier>{7bac1137-f9ac-45fc-a72c-f894c5d850b8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\3D Game\Scene">
+    <Filter Include="Header Files\Graphics-Assignment\Scene">
       <UniqueIdentifier>{0289ea81-6541-4317-87de-c6e02d512979}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Graphics-Assignment">
+      <UniqueIdentifier>{6caa5520-f781-4f14-b2cb-b6ca80cd34cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Graphics-Assignment\Scenes">
+      <UniqueIdentifier>{330c8296-9cf4-44ef-b91f-49b9cf45b688}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
