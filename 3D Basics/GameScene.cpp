@@ -139,6 +139,7 @@ void GameScene::ResetScene()
 
 	// Reset Outline
 	cube->SetIsOutlined(false);
+	cubeTwo->SetIsOutlined(false);
 
 	// Reset Camera
 	movingCamera->Reset();
