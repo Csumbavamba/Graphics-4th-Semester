@@ -35,10 +35,6 @@ public:
 	virtual void RotateAroundObject(glm::vec3 objectLocation, float distanceFromObject, float deltaTime);
 	virtual void FollowObject(glm::vec3 objectLocation);
 
-	// Movement
-	void ProcessArrowMovement(float deltaTime);
-	void Reset();
-
 
 protected:
 	glm::vec3 cameraPosition;

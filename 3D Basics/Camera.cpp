@@ -52,8 +52,6 @@ void Camera::Update(float deltaTime)
 {
 	// Last call
 	CreatePV();
-
-	ProcessArrowMovement(deltaTime);
 }
 
 glm::mat4 Camera::GetViewMatrix() const
@@ -141,27 +139,3 @@ void Camera::FollowObject(glm::vec3 objectLocation)
 	cameraLookDirection = glm::vec3(objectLocation.x, cameraLookDirection.y, objectLocation.z);
 }
 
-void Camera::ProcessArrowMovement(float deltaTime)
-{
-	float movement = 0.0f;
-
-	if (Input::GetKeyState('w') == DOWN)
-	{
-		// Keep removing from camera z position
-		movement = -1.0f * deltaTime;
-	}
-	else if (Input::GetKeyState('s') == DOWN)
-	{
-		// Keep adding to camera z position
-		movement = 1.0f * deltaTime;
-	}
-
-	cameraPosition = glm::vec3(cameraPosition.x, cameraPosition.y, cameraPosition.z + movement);
-}
-
-void Camera::Reset()
-{
-	cameraPosition = glm::vec3(1.0f, 1.0f, 10.0f);
-	cameraLookDirection = glm::vec3(-0.1f, -0.1f, -1.0f);
-	cameraUpDirection = glm::vec3(0.0f, 1.0f, 0.0f);
-}

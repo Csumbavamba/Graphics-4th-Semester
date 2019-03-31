@@ -66,7 +66,7 @@ void GameManager::PlayGame(int argc, char ** argv)
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA | GLUT_MULTISAMPLE);
 	glutInitWindowPosition(0, 0);
 	glutInitWindowSize(1024, 768);
-	glutCreateWindow("Dwarf Game II");
+	glutCreateWindow("Zsombi Graphics");
 
 	glClearColor(1.0, 0.0, 0.0, 1.0); // Clear Window
 

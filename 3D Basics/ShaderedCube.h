@@ -11,7 +11,7 @@ public:
 	virtual ~ShaderedCube();
 
 	virtual void Initialise() override;
-	virtual void Render(GLuint program);
+	virtual void Render(GLuint program) override;
 	
 	virtual void Update(float deltaTime);
 
@@ -22,6 +22,7 @@ public:
 private:
 
 	Mesh_Cube * mesh = NULL;
+
 	void RenderMeshOutline(const GLuint &program);
 
 	GLuint outlineProgram;

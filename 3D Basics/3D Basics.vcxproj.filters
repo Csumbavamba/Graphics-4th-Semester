@@ -116,6 +116,7 @@
     <ClCompile Include="PoolWall.cpp">
       <Filter>Source\3D Game</Filter>
     </ClCompile>
+    <ClCompile Include="MovingCamera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -233,6 +234,7 @@
     <ClInclude Include="WaterPool.h">
       <Filter>Header Files\3D Game</Filter>
     </ClInclude>
+    <ClInclude Include="MovingCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">

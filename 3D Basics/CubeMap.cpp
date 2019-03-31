@@ -107,14 +107,14 @@ void CubeMap::Initialise()
 		8,  10,  9, 	// Left
 		8,  11,  10,	// Left
 
-		12, 14,	 13,// Right
-		12, 15,	 14,// Right
+		12, 14,	 13,	// Right
+		12, 15,	 14,	// Right
 
-		16, 18,	 17,// Top
-		16, 19,	 18,// Top
+		16, 18,	 17,	// Top
+		16, 19,	 18,	// Top
 
-		20, 22,	 21,// Bottom
-		20, 23,	 22,// Bottom
+		20, 22,	 21,	// Bottom
+		20, 23,	 22,	// Bottom
 	};
 
 	indexCount = 36;

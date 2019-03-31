@@ -6,7 +6,6 @@ layout (location = 2) in vec2 texCoord;
 
 out vec2 fragTexCoord;
 out vec4 worldPosition;
-out vec4 viewSpace;
 
 uniform mat4 PVM;
 uniform mat4 model;

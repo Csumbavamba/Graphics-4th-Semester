@@ -6,6 +6,7 @@ class ShaderedCube;
 class Skybox;
 class WaterObject;
 class WaterPool;
+class MovingCamera;
 
 class GameScene :
 	public Scene
@@ -30,6 +31,7 @@ private:
 	ShaderedCube * cube = NULL;
 	ShaderedCube * cubeTwo = NULL;
 	Skybox * skybox = NULL;
+	MovingCamera * movingCamera = NULL;
 
 	// Water Shading
 	WaterPool * pool = NULL;

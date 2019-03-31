@@ -8,7 +8,7 @@
 #include "SceneManager.h"
 #include "WaterObject.h"
 #include "WaterPool.h"
-
+#include "MovingCamera.h"
 
 GameScene::GameScene()
 {
@@ -17,17 +17,20 @@ GameScene::GameScene()
 	skyBoxProgram = ShaderLoader::GetInstance()->CreateProgram("SkyBox-VS.vs", "SkyBox-FS.fs");
 	fogProgram = ShaderLoader::GetInstance()->CreateProgram("FogShader.vs", "FogShader.fs");
 
-	cube = new ShaderedCube(mainCamera);
-	cubeTwo = new ShaderedCube(mainCamera);
+	// mainCamera->~Camera();
+	movingCamera = new MovingCamera();
+
+	cube = new ShaderedCube(movingCamera);
+	cubeTwo = new ShaderedCube(movingCamera);
 
 	cubeTwo->transform.position.x += 0.5f;
 	cubeTwo->transform.position.z += 0.5f;
 	cubeTwo->transform.position.y += 0.5f;
 
-	skybox = new Skybox(mainCamera);
+	skybox = new Skybox(movingCamera);
 
 	// Water effects
-	pool = new WaterPool(mainCamera);
+	pool = new WaterPool(movingCamera);
 	pool->transform.position.y -= 2.0f;
 
 	isScissorEnabled = false;
@@ -47,6 +50,9 @@ GameScene::~GameScene()
 
 	delete pool;
 	pool = NULL;
+
+	delete movingCamera;
+	movingCamera = NULL;
 }
 
 void GameScene::Initialise()
@@ -55,6 +61,7 @@ void GameScene::Initialise()
 	cubeTwo->Initialise();
 	skybox->Initialise();
 	pool->Initialise();
+	// movingCamera->Initialise();
 }
 
 void GameScene::Render(GLuint program)
@@ -64,7 +71,7 @@ void GameScene::Render(GLuint program)
 	cube->Render(fogProgram);
 	cubeTwo->Render(fogProgram);
 
-	pool->Render(program);
+	pool->Render(fogProgram);
 	
 }
 
@@ -72,6 +79,7 @@ void GameScene::Update(float deltaTime)
 {
 	Scene::Update(deltaTime);
 
+	movingCamera->Update(deltaTime);
 
 	cube->Update(deltaTime);
 	cubeTwo->Update(deltaTime);
@@ -133,6 +141,6 @@ void GameScene::ResetScene()
 	cube->SetIsOutlined(false);
 
 	// Reset Camera
-	mainCamera->Reset();
+	movingCamera->Reset();
 }
 
