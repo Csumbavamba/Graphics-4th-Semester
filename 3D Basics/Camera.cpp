@@ -145,12 +145,12 @@ void Camera::ProcessArrowMovement(float deltaTime)
 {
 	float movement = 0.0f;
 
-	if (Input::GetSpecialKeyState(GLUT_KEY_UP) == DOWN)
+	if (Input::GetKeyState('w') == DOWN)
 	{
 		// Keep removing from camera z position
 		movement = -1.0f * deltaTime;
 	}
-	else if (Input::GetSpecialKeyState(GLUT_KEY_DOWN) == DOWN)
+	else if (Input::GetKeyState('s') == DOWN)
 	{
 		// Keep adding to camera z position
 		movement = 1.0f * deltaTime;

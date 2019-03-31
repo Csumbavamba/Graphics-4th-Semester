@@ -5,6 +5,7 @@
 class ShaderedCube;
 class Skybox;
 class WaterObject;
+class WaterPool;
 
 class GameScene :
 	public Scene
@@ -27,10 +28,11 @@ public:
 private:
 	// Gonna need to have a camera
 	ShaderedCube * cube = NULL;
+	ShaderedCube * cubeTwo = NULL;
 	Skybox * skybox = NULL;
 
 	// Water Shading
-	WaterObject * waterTop = NULL;
+	WaterPool * pool = NULL;
 	
 
 	GLuint skyBoxProgram;

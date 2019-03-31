@@ -37,6 +37,7 @@ void ShaderedCube::Render(GLuint program)
 	{
 		mesh->Render(camera, program);
 	}
+
 }
 
 void ShaderedCube::RenderMeshOutline(const GLuint &program)
@@ -59,6 +60,7 @@ void ShaderedCube::RenderMeshOutline(const GLuint &program)
 	transform.scale = glm::vec3(1.0f, 1.0f, 1.0f);
 	mesh->Update();
 
+	glStencilFunc(GL_ALWAYS, 1, 0xFF);
 	glStencilMask(0xFF);
 	glEnable(GL_DEPTH_TEST);
 }

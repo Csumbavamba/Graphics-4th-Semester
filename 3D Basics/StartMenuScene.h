@@ -3,6 +3,10 @@
 
 class GameMenu;
 
+class ShaderedCube;
+class WaterObject;
+class WaterPool;
+
 class StartMenuScene :
 	public Scene
 {
@@ -17,5 +21,11 @@ public:
 private:
 	
 	GameMenu * startMenu = NULL;
+
+	
+
+	// Water Shading background
+	WaterPool * pool = NULL;
+	ShaderedCube * cube = NULL;
 };
 

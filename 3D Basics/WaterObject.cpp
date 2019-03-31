@@ -8,7 +8,7 @@ WaterObject::WaterObject(Camera  * mainCamera)
 	camera = mainCamera;
 
 	mesh = new Mesh2D_Quad(this);
-	mesh->GetTexture()->SetTexturePath("Sprites/blending_transparent_window.png");
+	mesh->GetTexture()->SetTexturePath("Sprites/water.png");
 
 	transform.scale *= 2.0f;
 }

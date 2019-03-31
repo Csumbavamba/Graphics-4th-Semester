@@ -41,7 +41,7 @@ public:
 		std::string text,
 		std::string font,
 		glm::vec2 screenPosition,
-		glm::vec3 color			= glm::vec3(1.0f, 1.0f, 1.0f),
+		glm::vec3 color			= glm::vec3(0.0f, 0.0f, 0.0f),
 		float scale				= 1.0f);
 
 	~TextLabel() 

@@ -7,6 +7,7 @@
 #include "ShaderLoader.h"
 #include "SceneManager.h"
 #include "WaterObject.h"
+#include "WaterPool.h"
 
 
 GameScene::GameScene()
@@ -17,12 +18,17 @@ GameScene::GameScene()
 	fogProgram = ShaderLoader::GetInstance()->CreateProgram("FogShader.vs", "FogShader.fs");
 
 	cube = new ShaderedCube(mainCamera);
+	cubeTwo = new ShaderedCube(mainCamera);
+
+	cubeTwo->transform.position.x += 0.5f;
+	cubeTwo->transform.position.z += 0.5f;
+	cubeTwo->transform.position.y += 0.5f;
+
 	skybox = new Skybox(mainCamera);
 
 	// Water effects
-	waterTop = new WaterObject(mainCamera);
-	waterTop->transform.rotation.x = +90.f;
-	waterTop->transform.position.z += 5.0f;
+	pool = new WaterPool(mainCamera);
+	pool->transform.position.y -= 2.0f;
 
 	isScissorEnabled = false;
 }
@@ -33,18 +39,22 @@ GameScene::~GameScene()
 	delete cube;
 	cube = NULL;
 
+	delete cubeTwo;
+	cubeTwo = NULL;
+
 	delete skybox;
 	skybox = NULL;
 
-	delete waterTop;
-	waterTop = NULL;
+	delete pool;
+	pool = NULL;
 }
 
 void GameScene::Initialise()
 {
 	cube->Initialise();
+	cubeTwo->Initialise();
 	skybox->Initialise();
-	waterTop->Initialise();
+	pool->Initialise();
 }
 
 void GameScene::Render(GLuint program)
@@ -52,8 +62,9 @@ void GameScene::Render(GLuint program)
 	// skybox->Render(skyBoxProgram);
 
 	cube->Render(fogProgram);
+	cubeTwo->Render(fogProgram);
 
-	waterTop->Render(program);
+	pool->Render(program);
 	
 }
 
@@ -61,12 +72,10 @@ void GameScene::Update(float deltaTime)
 {
 	Scene::Update(deltaTime);
 
-	// skybox->Update();
 
 	cube->Update(deltaTime);
-	waterTop->Update(deltaTime);
-
-	// mainCamera->RotateAroundObject(cube->transform.position, 3.0f, deltaTime);
+	cubeTwo->Update(deltaTime);
+	pool->Update(deltaTime);
 
 	ProcessScissorInput();
 	ProcessStencilInput();
@@ -96,10 +105,11 @@ void GameScene::ProcessScissorInput()
 
 void GameScene::ProcessStencilInput()
 {
-	if (Input::GetKeyState('w') == DOWN_FIRST)
+	if (Input::GetKeyState('e') == DOWN_FIRST)
 	{
 		// Swap between outlined and not outlined
 		cube->SetIsOutlined(!cube->IsOutlined());
+		cubeTwo->SetIsOutlined(!cubeTwo->IsOutlined());
 	}
 }
 

@@ -107,7 +107,15 @@
     <ClCompile Include="ShaderedCube.cpp">
       <Filter>Source\3D Game</Filter>
     </ClCompile>
-    <ClCompile Include="WaterObject.cpp" />
+    <ClCompile Include="WaterPool.cpp">
+      <Filter>Source\3D Game</Filter>
+    </ClCompile>
+    <ClCompile Include="WaterObject.cpp">
+      <Filter>Source\3D Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PoolWall.cpp">
+      <Filter>Source\3D Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -216,7 +224,15 @@
     <ClInclude Include="ShaderedCube.h">
       <Filter>Header Files\3D Game</Filter>
     </ClInclude>
-    <ClInclude Include="WaterObject.h" />
+    <ClInclude Include="PoolWall.h">
+      <Filter>Header Files\3D Game</Filter>
+    </ClInclude>
+    <ClInclude Include="WaterObject.h">
+      <Filter>Header Files\3D Game</Filter>
+    </ClInclude>
+    <ClInclude Include="WaterPool.h">
+      <Filter>Header Files\3D Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fs">
@@ -268,9 +284,6 @@
       <Filter>Resources\Shaders</Filter>
     </None>
     <None Include="FogShader.fs">
-      <Filter>Resources\Shaders</Filter>
-    </None>
-    <None Include="WaterShader.fs">
       <Filter>Resources\Shaders</Filter>
     </None>
   </ItemGroup>

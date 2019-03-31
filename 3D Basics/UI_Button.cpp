@@ -86,14 +86,14 @@ void UI_Button::SetIsSelected(bool isSelected)
 	if (isSelected)
 	{
 		button->SetScale(1.2f);
-		button->SetColor(glm::vec3(1.0f, 1.0f, 1.0f));
+		button->SetColor(glm::vec3(0.0f, 0.0f, 0.0f));
 		AdjustButtonPosition();
 	}
 	// Otherwise bring it back to normal
 	else
 	{
 		button->SetScale(1.0f);
-		button->SetColor(glm::vec3(0.8f, 0.8f, 0.8f));
+		button->SetColor(glm::vec3(0.2f, 0.2f, 0.2f));
 		AdjustButtonPosition();
 	}
 }
