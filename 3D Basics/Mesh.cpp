@@ -3,12 +3,15 @@
 #include "Texture.h"
 #include "GameObject.h"
 
+#include <iostream>
 
 Mesh::Mesh()
 {
 	texture = new Texture();
 	texture->SetTexturePath("Sprites/Rayman.jpg");
 	texture->Initialise();
+
+	cameraPosition = glm::vec3(1.0f, 1.0f, 10.0f);
 }
 
 
@@ -27,8 +30,9 @@ void Mesh::Render(Camera * camera, GLuint program)
 	glBindTexture(GL_TEXTURE_2D, texture->GetTexture());
 	glUniform1i(glGetUniformLocation(program, "tex"), 0);
 
+	// Get values to send to shaders
 	PVM = camera->GetPV() * modelMatrix;
-
+	
 	// Provide PVM
 	GLuint PVMLoc = glGetUniformLocation(program, "PVM");
 	glUniformMatrix4fv(PVMLoc, 1, GL_FALSE, glm::value_ptr(PVM));
@@ -36,6 +40,11 @@ void Mesh::Render(Camera * camera, GLuint program)
 	// Provide Model
 	GLuint ModelLoc = glGetUniformLocation(program, "model");
 	glUniformMatrix4fv(ModelLoc, 1, GL_FALSE, glm::value_ptr(modelMatrix));
+
+	// Proved Camera Position
+	cameraPosition = camera->GetCameraPosition();
+	GLuint camPos = glGetUniformLocation(program, "camPos");
+	glUniformMatrix3fv(camPos, 1, GL_FALSE, glm::value_ptr(cameraPosition));
 
 	// Draw Object
 	glBindVertexArray(VAO);
@@ -60,9 +69,9 @@ void Mesh::ReflectionRender(Camera * camera, GLuint program, GLuint textureID)
 	glUniformMatrix4fv(PVMLoc, 1, GL_FALSE, glm::value_ptr(PVM));
 
 	//Provide CamPos
-	CameraPosition = camera->GetCameraPosition();
+	cameraPosition = camera->GetCameraPosition();
 	GLuint camPos = glGetUniformLocation(program, "camPos");
-	glUniformMatrix4fv(camPos, 1, GL_FALSE, glm::value_ptr(CameraPosition));
+	glUniformMatrix4fv(camPos, 1, GL_FALSE, glm::value_ptr(cameraPosition));
 	
 	// Provide Model
 	GLuint ModelLoc = glGetUniformLocation(program, "model");

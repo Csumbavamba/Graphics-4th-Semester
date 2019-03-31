@@ -37,8 +37,7 @@ protected:
 	glm::mat4 PVM;
 	glm::mat4 modelMatrix;
 
-
-	glm::vec3 CameraPosition;
+	glm::vec3 cameraPosition;
 
 
 	GameObject * owner = NULL;

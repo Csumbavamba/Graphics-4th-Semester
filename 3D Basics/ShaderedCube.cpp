@@ -37,7 +37,6 @@ void ShaderedCube::Render(GLuint program)
 	{
 		mesh->Render(camera, program);
 	}
-
 }
 
 void ShaderedCube::RenderMeshOutline(const GLuint &program)

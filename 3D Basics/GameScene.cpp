@@ -13,6 +13,7 @@ GameScene::GameScene()
 	sceneName = "GameScene";
 
 	skyBoxProgram = ShaderLoader::GetInstance()->CreateProgram("SkyBox-VS.vs", "SkyBox-FS.fs");
+	fogProgram = ShaderLoader::GetInstance()->CreateProgram("FogShader.vs", "FogShader.fs");
 
 	cube = new ShaderedCube(mainCamera);
 	skybox = new Skybox(mainCamera);
@@ -28,6 +29,7 @@ GameScene::~GameScene()
 
 	delete skybox;
 	skybox = NULL;
+
 }
 
 void GameScene::Initialise()
@@ -40,7 +42,7 @@ void GameScene::Render(GLuint program)
 {
 	// skybox->Render(skyBoxProgram);
 
-	cube->Render(program);
+	cube->Render(fogProgram);
 	
 }
 
@@ -52,11 +54,13 @@ void GameScene::Update(float deltaTime)
 
 	cube->Update(deltaTime);
 
-	mainCamera->RotateAroundObject(cube->transform.position, 3.0f, deltaTime);
+	// mainCamera->RotateAroundObject(cube->transform.position, 3.0f, deltaTime);
 
 	ProcessScissorInput();
 	ProcessStencilInput();
 	LookForPauseInput();
+
+	
 }
 
 void GameScene::ProcessScissorInput()
@@ -106,5 +110,7 @@ void GameScene::ResetScene()
 	// Reset Outline
 	cube->SetIsOutlined(false);
 
+	// Reset Camera
+	mainCamera->Reset();
 }
 

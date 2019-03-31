@@ -29,9 +29,11 @@ public:
 private:
 	// Gonna need to have a camera
 	ShaderedCube * cube = NULL;
+	Skybox * skybox = NULL;
 
 	GLuint skyBoxProgram;
-	Skybox * skybox = NULL;
+	GLuint fogProgram;
+
 
 	bool isScissorEnabled;
 };

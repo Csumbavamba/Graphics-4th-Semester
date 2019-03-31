@@ -148,7 +148,6 @@
     <ClCompile Include="GameMenu.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MovingCamera.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="ShaderedCube.cpp" />
     <ClCompile Include="StartMenuScene.cpp" />
@@ -184,7 +183,6 @@
     <ClInclude Include="FileWriting.h" />
     <ClInclude Include="GameMenu.h" />
     <ClInclude Include="GameScene.h" />
-    <ClInclude Include="MovingCamera.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="ShaderedCube.h" />
     <ClInclude Include="StartMenuScene.h" />
@@ -215,6 +213,8 @@
     <ClInclude Include="Utility.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="FogShader.fs" />
+    <None Include="FogShader.vs" />
     <None Include="FragmentShader.fs" />
     <None Include="Model.fs" />
     <None Include="Model.vs" />

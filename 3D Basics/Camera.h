@@ -15,25 +15,29 @@ class Camera
 public:
 	Camera();
 	Camera(ViewMode viewMode);
-	~Camera();
+	virtual ~Camera();
 
 	void Initialise();
-	void Update(float deltaTime);
+	virtual void Update(float deltaTime);
 
-	glm::mat4 GetViewMatrix() const;
-	glm::mat4 GetProjectionMatrix() const;
-	glm::mat4 GetPV() const;
+	virtual glm::mat4 GetViewMatrix() const;
+	virtual glm::mat4 GetProjectionMatrix() const;
+	virtual glm::mat4 GetPV() const;
 
-	void SetCameraPosition(glm::vec3 cameraPosition);
-	void SetCameraLookDirection(glm::vec3 cameraLookDirection);
-	void SetCameraUpDirection(glm::vec3 cameraUpDirection);
+	virtual void SetCameraPosition(glm::vec3 cameraPosition);
+	virtual void SetCameraLookDirection(glm::vec3 cameraLookDirection);
+	virtual void SetCameraUpDirection(glm::vec3 cameraUpDirection);
 
-	glm::vec3 GetCameraPosition() const;
-	glm::vec3 GetCameraLookDirection() const;
-	glm::vec3 GetCameraUpDirection() const;
+	virtual glm::vec3 GetCameraPosition() const;
+	virtual glm::vec3 GetCameraLookDirection() const;
+	virtual glm::vec3 GetCameraUpDirection() const;
 
-	void RotateAroundObject(glm::vec3 objectLocation, float distanceFromObject, float deltaTime);
-	void FollowObject(glm::vec3 objectLocation);
+	virtual void RotateAroundObject(glm::vec3 objectLocation, float distanceFromObject, float deltaTime);
+	virtual void FollowObject(glm::vec3 objectLocation);
+
+	// Movement
+	void ProcessArrowMovement(float deltaTime);
+	void Reset();
 
 
 protected:
