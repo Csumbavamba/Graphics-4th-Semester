@@ -11,14 +11,12 @@ uniform vec3 camPos;
 
 void main (void)
 {
-
-	vec3 tempCamPos = vec3(0.0f, 0.0f, 10.0f);
-
-	float distanceToCamera = distance(worldPosition.xyz, tempCamPos);
+	float distanceToCamera = distance(worldPosition.xyz, camPos);
 
 	float fogMaxDistance = 15.0f;
-	float fogMinDistance = 1.0f;
-	vec4 fogColor = vec4(0.0f, 1.0f, 0.0f, 1.0f);
+	float fogMinDistance = 5.0f;
+
+	vec4 fogColor = vec4(0.5f, 0.5f, 0.5f, 1.0f);
 
 	float lerp = (distanceToCamera - fogMinDistance) / fogMaxDistance;
 	lerp = clamp(lerp, 0.0f, 1.0f);
