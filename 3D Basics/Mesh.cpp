@@ -42,17 +42,6 @@ void Mesh::Render(Camera * camera, GLuint program)
 	glUniformMatrix4fv(ModelLoc, 1, GL_FALSE, glm::value_ptr(modelMatrix));
 
 
-	// TEST!!!!!
-	// Provide View
-	GLuint viewLoc = glGetUniformLocation(program, "view");
-	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(camera->GetViewMatrix()));
-
-	// Provide Projection
-	GLuint projectionLoc = glGetUniformLocation(program, "projection");
-	glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(camera->GetProjectionMatrix()));
-	// TEST!!!!!
-
-
 	// Proved Camera Position
 	cameraPosition = camera->GetCameraPosition();
 	GLuint camPos = glGetUniformLocation(program, "camPos");

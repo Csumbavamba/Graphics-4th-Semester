@@ -31,7 +31,7 @@ GameScene::GameScene()
 
 	// Water effects
 	pool = new WaterPool(movingCamera);
-	pool->transform.position.y -= 2.0f;
+	pool->transform.position.y -= 1.0f;
 
 	isScissorEnabled = false;
 }
@@ -83,6 +83,7 @@ void GameScene::Update(float deltaTime)
 	cube->Update(deltaTime);
 	cubeTwo->Update(deltaTime);
 	pool->Update(deltaTime);
+	// skybox->Update();
 
 	// Process Inputs
 	ProcessScissorInput();

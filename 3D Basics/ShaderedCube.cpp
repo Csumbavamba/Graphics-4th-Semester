@@ -49,7 +49,6 @@ void ShaderedCube::RenderMeshOutline(const GLuint &program)
 
 	glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
 	glStencilMask(0x00); // disable writing to the stencil buffer
-	glDisable(GL_DEPTH_TEST);
 
 	// Do outline mesh here
 	transform.scale = glm::vec3(1.1f, 1.1f, 1.1f);
@@ -62,7 +61,6 @@ void ShaderedCube::RenderMeshOutline(const GLuint &program)
 
 	glStencilFunc(GL_ALWAYS, 1, 0xFF);
 	glStencilMask(0xFF);
-	glEnable(GL_DEPTH_TEST);
 }
 
 void ShaderedCube::Update(float deltaTime)
