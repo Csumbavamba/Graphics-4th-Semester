@@ -48,7 +48,6 @@ void Mesh::Render(Camera * camera, GLuint program)
 	glUniform3fv(camPos, 1, glm::value_ptr(cameraPosition));
 
 	
-
 	// Draw Object
 	glBindVertexArray(VAO);
 	glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_INT, 0);

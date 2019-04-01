@@ -88,8 +88,7 @@ void GameManager::PlayGame(int argc, char ** argv)
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	// Enable Stencil Test
-	glEnable(GL_STENCIL_TEST);
-	glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
+	
 
 	// Enable Antialiasing
 	glutSetOption(GLUT_MULTISAMPLE, 8);
@@ -137,7 +136,7 @@ void GameManager::Initialise()
 void GameManager::Render()
 {
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-	glClearColor(.5, 0.5, 0.5, 1.0); // clear red
+	glClearColor(0.5, 0.5, 0.5, 1.0); // clear red
 
 	
 	// Do rendering here - Render Current Scene

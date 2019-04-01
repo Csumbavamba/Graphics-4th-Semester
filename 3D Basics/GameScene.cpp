@@ -66,11 +66,13 @@ void GameScene::Initialise()
 void GameScene::Render(GLuint program)
 {
 	// skybox->Render(skyBoxProgram);
+	
 
 	cube->Render(fogProgram);
 	cubeTwo->Render(fogProgram);
 
 	pool->Render(fogProgram);
+	
 	
 }
 
