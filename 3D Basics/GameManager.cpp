@@ -88,7 +88,8 @@ void GameManager::PlayGame(int argc, char ** argv)
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	// Enable Stencil Test
-	
+	glEnable(GL_STENCIL_TEST);
+	glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
 
 	// Enable Antialiasing
 	glutSetOption(GLUT_MULTISAMPLE, 8);

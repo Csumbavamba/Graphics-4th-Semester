@@ -43,7 +43,6 @@ void ShaderedCube::Render(GLuint program)
 void ShaderedCube::RenderMeshOutline(const GLuint &program)
 {
 	glEnable(GL_STENCIL_TEST);
-	glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
 
 	glStencilFunc(GL_ALWAYS, 1, 0xFF); // all fragments should update the stencil buffer
 	glStencilMask(0xFF); // enable writing to the stencil buffer
