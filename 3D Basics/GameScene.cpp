@@ -122,6 +122,15 @@ void GameScene::ProcessStencilInput()
 		cube->SetIsOutlined(!cube->IsOutlined());
 		cubeTwo->SetIsOutlined(!cubeTwo->IsOutlined());
 	}
+
+	if (Input::GetKeyState('r') == DOWN)
+	{
+		glPolygonMode(GL_FRONT, GL_LINE);
+	}
+	else
+	{
+		glPolygonMode(GL_FRONT, GL_FILL);
+	}
 }
 
 void GameScene::LookForPauseInput()
